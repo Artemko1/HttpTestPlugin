@@ -6,16 +6,18 @@
 #include "Components/TextBlock.h"
 #include "Engine/Texture2DDynamic.h"
 
+#define SET_TEXT_FROM_STRING(TextField, Str) TextField->SetText(FText::FromString(Str));
+
 void UHttpRickyMortyUserWidget::SetupWidgetText(const FInfoData& InfoData)
 {
-	this->IdTextBlock->SetText(FText::FromString(FString::FromInt(InfoData.RecievedId)));
-	this->NameTextBlock->SetText(FText::FromString(InfoData.ReceivedName));
-	this->StatusTextBlock->SetText(FText::FromString(InfoData.ReceivedStatus));
-	this->SpeciesTextBlock->SetText(FText::FromString(InfoData.ReceivedSpecies));
-	this->TypeTextBlock->SetText(FText::FromString(InfoData.ReceivedType));
-	this->GenderTextBlock->SetText(FText::FromString(InfoData.ReceivedGender));
-	this->URLTextBlock->SetText(FText::FromString(InfoData.ReceivedURL));
-	this->CreatedTextBlock->SetText(FText::FromString(InfoData.ReceivedCreated));
+	SET_TEXT_FROM_STRING(IdTextBlock, FString::FromInt(InfoData.RecievedId))
+    SET_TEXT_FROM_STRING(NameTextBlock, InfoData.ReceivedName)
+    SET_TEXT_FROM_STRING(StatusTextBlock, InfoData.ReceivedStatus)
+    SET_TEXT_FROM_STRING(SpeciesTextBlock, InfoData.ReceivedSpecies)
+    SET_TEXT_FROM_STRING(TypeTextBlock, InfoData.ReceivedType)
+    SET_TEXT_FROM_STRING(GenderTextBlock, InfoData.ReceivedGender)
+    SET_TEXT_FROM_STRING(URLTextBlock, InfoData.ReceivedURL)
+    SET_TEXT_FROM_STRING(CreatedTextBlock, InfoData.ReceivedCreated)
 
 	FSlateBrush Brush;
 	Brush.SetImageSize(this->ImageSize);

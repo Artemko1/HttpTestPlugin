@@ -22,20 +22,20 @@ struct FInfoData
 	void Reset()
 	{
 		RecievedId = 0;
-		ReceivedName = "";
-		ReceivedStatus = "";
-		ReceivedSpecies = "";
-		ReceivedType = "";
-		ReceivedGender = "";
-		ReceivedURL = "";
-		ReceivedCreated = "";
-        ImageURL = "";
+		ReceivedName.Empty();
+		ReceivedStatus.Empty();
+		ReceivedSpecies.Empty();
+		ReceivedType.Empty();
+		ReceivedGender.Empty();
+		ReceivedURL.Empty();
+		ReceivedCreated.Empty();
+		ImageURL.Empty();
 		Texture = nullptr;
 	}
 
-	void Parse(TSharedPtr<FJsonObject> JsonObject) 
-    {
-        RecievedId = JsonObject->GetIntegerField("id");
+	void Parse(TSharedPtr<FJsonObject> JsonObject)
+	{
+		RecievedId = JsonObject->GetIntegerField("id");
 		ReceivedName = JsonObject->GetStringField("name");
 		ReceivedStatus = JsonObject->GetStringField("status");
 		ReceivedSpecies = JsonObject->GetStringField("species");
@@ -44,5 +44,5 @@ struct FInfoData
 		ReceivedURL = JsonObject->GetStringField("url");
 		ReceivedCreated = JsonObject->GetStringField("created");
 		ImageURL = JsonObject->GetStringField("image");
-    }
+	}
 };
