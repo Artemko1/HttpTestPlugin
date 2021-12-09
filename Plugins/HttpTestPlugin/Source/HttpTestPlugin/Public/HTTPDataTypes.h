@@ -7,42 +7,42 @@ struct FInfoData
 {
 	GENERATED_BODY();
 
-	int32 RecievedId;
-	FString ReceivedName;
-	FString ReceivedStatus;
-	FString ReceivedSpecies;
-	FString ReceivedType;
-	FString ReceivedGender;
-	FString ReceivedURL;
-	FString ReceivedCreated;
+	int32 Id;
+	FString Name;
+	FString Status;
+	FString Species;
+	FString Type;
+	FString Gender;
+	FString URL;
+	FString Created;
 	FString ImageURL;
 	UPROPERTY()
 	UTexture2DDynamic* Texture;
 
 	void Reset()
 	{
-		RecievedId = 0;
-		ReceivedName.Empty();
-		ReceivedStatus.Empty();
-		ReceivedSpecies.Empty();
-		ReceivedType.Empty();
-		ReceivedGender.Empty();
-		ReceivedURL.Empty();
-		ReceivedCreated.Empty();
+		Id = 0;
+		Name.Empty();
+		Status.Empty();
+		Species.Empty();
+		Type.Empty();
+		Gender.Empty();
+		URL.Empty();
+		Created.Empty();
 		ImageURL.Empty();
 		Texture = nullptr;
 	}
 
 	void Parse(TSharedPtr<FJsonObject> JsonObject)
 	{
-		RecievedId = JsonObject->GetIntegerField("id");
-		ReceivedName = JsonObject->GetStringField("name");
-		ReceivedStatus = JsonObject->GetStringField("status");
-		ReceivedSpecies = JsonObject->GetStringField("species");
-		ReceivedType = JsonObject->GetStringField("type");
-		ReceivedGender = JsonObject->GetStringField("gender");
-		ReceivedURL = JsonObject->GetStringField("url");
-		ReceivedCreated = JsonObject->GetStringField("created");
+		Id = JsonObject->GetIntegerField("id");
+		Name = JsonObject->GetStringField("name");
+		Status = JsonObject->GetStringField("status");
+		Species = JsonObject->GetStringField("species");
+		Type = JsonObject->GetStringField("type");
+		Gender = JsonObject->GetStringField("gender");
+		URL = JsonObject->GetStringField("url");
+		Created = JsonObject->GetStringField("created");
 		ImageURL = JsonObject->GetStringField("image");
 	}
 };
