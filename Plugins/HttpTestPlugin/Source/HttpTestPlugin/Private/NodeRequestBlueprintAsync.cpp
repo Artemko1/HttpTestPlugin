@@ -56,7 +56,7 @@ void UNodeRequestBlueprintAsync::HandleRequest(FHttpRequestPtr HttpRequest, FHtt
 		UAsyncTaskDownloadImage* DownloadTask = NewObject<UAsyncTaskDownloadImage>();
 		DownloadTask->OnSuccess.AddDynamic(this, &UNodeRequestBlueprintAsync::DownloadSuccess);
 		DownloadTask->OnFail.AddDynamic(this, &UNodeRequestBlueprintAsync::DownloadFail);
-		DownloadTask->Start(InfoData.ImageURL);
+		DownloadTask->Start(InfoData.Image);
 	}
 	else
 	{
